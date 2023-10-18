@@ -47,7 +47,6 @@ func Connect() (*gorm.DB, error) {
 func connectToDB() (*gorm.DB, error) {
 	counts := 0
 
-	//dsn := "host=localhost user=zipservice password=heVS3YaA dbname=zips port=5432 sslmode=disable TimeZone=Europe/Helsinki"
 	err := godotenv.Load(".env")
 	if err != nil {
 		return nil, err
