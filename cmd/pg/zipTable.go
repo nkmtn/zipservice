@@ -47,10 +47,10 @@ func (p *Postgres) addZips(zips []Zip) (error, int) {
 	cursor, count := 0, 0
 	step := 1000
 	err := error(nil)
-	for cursor < len(newZips)-1 {
+	for cursor < len(newZips) {
 		chunk := newZips
-		if len(newZips) > cursor+step-1 {
-			chunk = newZips[cursor : cursor+step-1]
+		if len(newZips) > cursor+step {
+			chunk = newZips[cursor : cursor+step]
 		}
 
 		result := p.con.Create(&chunk)
